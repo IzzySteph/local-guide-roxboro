@@ -34,7 +34,7 @@ h3 {
 	font-size: 2em;
 }
 
-.fancy {
+.main .fancy {
 	font-family: "Allura", serif;
 	font-size: 6em;
 	color: #f8e086;
@@ -75,7 +75,7 @@ h3 {
 .main {
 	padding-left: 10%;
 	padding-right: 10%;
-	max-width: 70rem;
+	max-width: 80rem;
 	margin: auto;
 }
 
@@ -84,6 +84,9 @@ h3 {
 	display: inline-block;
 	width: 100%;
 	box-sizing: border-box;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
 }
 
 .menu {
@@ -112,4 +115,57 @@ h3 {
 .menu li {
 	padding-left: 5%;
 	padding-right: 5%;
+}
+
+/* Place sections */
+.place {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	margin: 32px 0;
+}
+
+.place-text {
+	flex: 1;
+	min-width: 0;
+}
+
+.place img {
+	width: 40%;
+	height: auto;
+	border-radius: 8px;
+}
+
+.place.reverse {
+	flex-direction: row-reverse;
+}
+
+.details {
+	margin: 10px 0;
+}
+
+.page.description {
+	padding: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	max-width: 50rem;
+	text-align: center;
+	box-shadow: 0px 0px 10px 0px #2f7b9c;
+	border-radius: 5px;
+}
+
+.hours {
+	list-style: none;
+	text-indent: 20px;
+}
+
+@media (max-width: 700px) {
+	.place,
+	.place.reverse {
+		flex-direction: column;
+	}
+
+	.place img {
+		width: 100%;
+	}
 }
