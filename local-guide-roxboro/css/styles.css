@@ -52,6 +52,9 @@ h3 {
 	margin: auto;
 	max-width: 70rem;
 	text-align: center;
+	text-shadow:
+		4px 3px 2px #000000,
+		-2px -1px 2px #5e5e5e;
 }
 
 .hero {
@@ -64,9 +67,10 @@ h3 {
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
+	filter: sepia(80%);
 }
 
-.tagline {
+.hero .tagline {
 	font-family: "Exo", sans-serif;
 	font-weight: 700;
 	font-size: 1.5em;
@@ -77,6 +81,9 @@ h3 {
 	padding-right: 10%;
 	max-width: 80rem;
 	margin: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 
 /* Navigation Bar */
@@ -157,6 +164,34 @@ h3 {
 .hours {
 	list-style: none;
 	text-indent: 20px;
+}
+
+/* Footer */
+.footer-content {
+	display: flex;
+	margin: auto;
+	padding: 50px;
+	gap: 50px;
+	justify-content: space-between;
+	align-items: end;
+	flex-direction: row-reverse;
+	background-color: #2f7b9c;
+}
+
+.footer-links {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	gap: 40px;
+	/* text-wrap: nowrap; */
+}
+
+.footer-links a {
+	color: #fffae9;
+}
+
+.footer-links a:hover {
+	color: aquamarine;
 }
 
 @media (max-width: 700px) {
