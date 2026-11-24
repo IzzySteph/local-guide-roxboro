@@ -34,7 +34,7 @@ h3 {
 	font-size: 2em;
 }
 
-.main .fancy {
+.fancy {
 	font-family: "Allura", serif;
 	font-size: 6em;
 	color: #f8e086;
@@ -52,16 +52,14 @@ h3 {
 	margin: auto;
 	max-width: 70rem;
 	text-align: center;
-	text-shadow:
-		4px 3px 2px #000000,
-		-2px -1px 2px #5e5e5e;
+	text-shadow: 2px 2px 0px #000000;
 }
 
 .hero {
 	display: flex;
 	/*Image source link https://commons.wikimedia.org/wiki/File:Kirby_theater_in_Roxboro.jpg */
 	background-image:
-		linear-gradient(rgba(0, 0, 0, 0.65)), url("/images/hero.jpg");
+		linear-gradient(rgba(0, 0, 0, 0.65)), url("../images/hero.jpg");
 	height: 400px;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -85,27 +83,42 @@ h3 {
 	margin: auto;
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 40px;
 }
 
-/* Navigation Bar */
+main a,
+main a:visited {
+	color: #000000;
+	font-weight: bold;
+	text-decoration-color: #2f7b9c;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 3px;
+	text-decoration-skip-ink: none;
+	padding: 2px 4px;
+	margin: 0 -4px;
+}
+
+main a:hover,
+main a:focus-visible {
+	background-color: #fff;
+	outline: 2px solid #2f7b9c;
+	box-shadow: 5px 5px 0 #2f7b9c;
+	text-decoration: none;
+}
+
 .navigation-bar {
-	display: inline-block;
-	width: 100%;
-	box-sizing: border-box;
 	position: sticky;
 	top: 0;
 	z-index: 1000;
+	background-color: #fffae9;
 }
 
 .menu {
 	list-style-type: none;
-	margin: 0px;
-	padding: 0;
-	font-weight: bold;
-	background-color: #fffae9;
 	display: flex;
+	font-weight: bold;
 	justify-content: center;
+	gap: 2%;
 }
 
 .menu a {
@@ -113,12 +126,17 @@ h3 {
 	color: #2f7b9c;
 	padding: 14px 30px;
 	text-decoration: none;
+	font-weight: bold;
+	padding: 10px 50px;
+	margin: 0 -10px;
 }
 
-.menu a:hover {
+.menu a:hover,
+.menu a:focus-visible {
 	background-color: #2f7b9c;
 	color: #fffae9;
-	padding: 14px 30px;
+	outline: 2px solid #000000;
+	box-shadow: 5px 5px 0 #000000;
 }
 
 .menu li {
@@ -129,9 +147,13 @@ h3 {
 /* Place sections */
 .place {
 	display: flex;
-	align-items: center;
-	gap: 24px;
-	margin: 32px 0;
+	align-items: start;
+	gap: 50px;
+	background-color: #fff;
+	padding: 20px;
+	border: 2px solid #2f7b9c;
+	border-radius: 0px;
+	box-shadow: 10px 10px 0 #2f7b9c;
 }
 
 .place-text {
@@ -142,26 +164,39 @@ h3 {
 .place img {
 	width: 40%;
 	height: auto;
-	border-radius: 8px;
+	border-radius: 0px;
+	border: 2px solid #000000;
+	box-shadow: 5px 5px 0 #000000;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
 }
 
+.place .pcpclogo {
+	object-fit: contain;
+	background-color: #fff;
+	padding: 16px;
+}
 .place.reverse {
 	flex-direction: row-reverse;
 }
 
 .details {
 	margin: 10px 0;
+	padding-left: 10px;
+	border-left: 5px dotted #2f7b9c;
 }
 
 .page.description {
-	padding: 20px;
+	padding: 20px 50px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	margin: auto;
-	max-width: 50rem;
+	max-width: 60rem;
 	text-align: center;
-	box-shadow: 0px 0px 10px 0px #2f7b9c;
-	border-radius: 5px;
+	background-color: #2f7b9c;
+	color: #fffae9;
+	border: 2px solid #000000;
+	box-shadow: 10px 10px 0 #000000;
 }
 
 .hours {
@@ -185,16 +220,28 @@ h3 {
 	list-style: none;
 	display: flex;
 	justify-content: space-between;
-	gap: 40px;
-	/* text-wrap: nowrap; */
+	gap: 50px;
+	text-wrap: nowrap;
 }
 
-.footer-links a {
+.footer-links a,
+.footer-links a:visited {
 	color: #fffae9;
+	font-weight: bold;
+	text-decoration-color: #fffae9;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 3px;
+	text-decoration-skip-ink: none;
+	padding: 2px 4px;
+	margin: 0 -4px;
 }
 
-.footer-links a:hover {
-	color: aquamarine;
+.footer-links a:hover,
+.footer-links a:focus-visible {
+	color: #2f7b9c;
+	background-color: #fffae9;
+	outline: 2px solid #000000;
+	box-shadow: 5px 5px 0 #000000;
 }
 
 .footer {
@@ -216,9 +263,54 @@ h3 {
 	.place,
 	.place.reverse {
 		flex-direction: column;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
 	}
 
 	.place img {
 		width: 100%;
+	}
+
+	.menu {
+		justify-content: space-around;
+		gap: 0;
+	}
+
+	.menu a {
+		padding: 14px 12px;
+	}
+
+	.fancy {
+		font-size: 4em;
+	}
+
+	.footer-content {
+		flex-direction: column-reverse;
+		align-items: flex-start;
+	}
+
+	.footer-links {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.page.description {
+		padding: 20px;
+		text-align: left;
+	}
+
+	h2 {
+		font-size: 35px;
+	}
+
+	h3 {
+		font-size: 19px;
+	}
+
+	.main {
+		padding-left: 5%;
+		padding-right: 5%;
+		gap: 50px;
 	}
 }
